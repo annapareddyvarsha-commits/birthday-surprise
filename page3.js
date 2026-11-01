@@ -36,11 +36,11 @@ const giftContent = {
         </p>
 
         <div class="memory-photos">
-            <img src="images/photo1.jpeg" alt="Our memory 1">
-            <img src="images/photo2.jpeg" alt="Our memory 2">
-            <img src="images/photo3.jpeg" alt="Our memory 3">
-            <img src="images/photo4.jpeg" alt="Our memory 4">
-        </div>
+    <img src="photo1.jpeg" alt="Our memory 1">
+    <img src="photo2.jpeg" alt="Our memory 2">
+    <img src="photo3.jpeg" alt="Our memory 3">
+    <img src="photo4.jpeg" alt="Our memory 4">
+    </div>
 
         <p style="margin-top:20px">
             More memories to create together! 💗
