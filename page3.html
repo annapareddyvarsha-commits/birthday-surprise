@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Little Gifts ❤️</title>
+    <link rel="stylesheet" href="page3.css">
+</head>
+<body>
+
+    <div id="hearts"></div>
+    <div id="confetti"></div>
+
+    <main class="container">
+
+        <p class="top">♡ A LITTLE BOX OF HAPPINESS ♡</p>
+
+        <h1>Three Little Gifts 🎁</h1>
+
+        <p class="subtitle">
+            Three boxes, three surprises, endless love!
+        </p>
+
+        <p class="description">
+            Choose your gift, open it slowly, and discover
+            what my heart has prepared for you. ❤️
+        </p>
+
+        <div class="progress">
+            <span id="progressText">0 / 3 Gifts Opened</span>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="gifts">
+
+            <!-- Gift 1 -->
+            <div class="gift-card">
+                <div class="gift-icon">🎁</div>
+                <h2>Gift No. 1</h2>
+                <p>10 Reasons Why I Love You</p>
+                <button class="openGift" data-gift="1">
+                    OPEN GIFT ❤️
+                </button>
+            </div>
+
+            <!-- Gift 2 -->
+            <div class="gift-card">
+                <div class="gift-icon">🎀</div>
+                <h2>Gift No. 2</h2>
+                <p>Our Beautiful Memories</p>
+                <button class="openGift" data-gift="2">
+                    OPEN GIFT 📸
+                </button>
+            </div>
+
+            <!-- Gift 3 -->
+            <div class="gift-card">
+                <div class="gift-icon">💝</div>
+                <h2>Gift No. 3</h2>
+                <p>A Secret Message For You</p>
+                <button class="openGift" data-gift="3">
+                    OPEN GIFT 💌
+                </button>
+            </div>
+
+        </div>
+
+        <p id="bottomMessage">
+            Every gift has a little piece of my heart. 🥹
+        </p>
+
+        <button id="nextBtn" onclick="goNext()" hidden>
+            UNLOCK THE NEXT SURPRISE ❤️
+        </button>
+
+    </main>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close" id="closePopup">×</button>
+            <div id="popupBody"></div>
+        </div>
+    </div>
+
+    <script src="page3.js"></script>
+
+</body>
+</html>

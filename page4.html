@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Love Envelopes 💌</title>
+    <link rel="stylesheet" href="page4.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Open the Secret Envelopes 💌</h1>
+        <p class="subtitle">Each envelope holds a special surprise for you ❤️</p>
+
+        <div class="envelope-container">
+
+            <div class="envelope" data-letter="0">
+                <div class="flap">💌</div>
+                <p>1. Special Message</p>
+            </div>
+
+            <div class="envelope" data-letter="1">
+                <div class="flap">💌</div>
+                <p>2. Funny Memories</p>
+            </div>
+
+            <div class="envelope" data-letter="2">
+                <div class="flap">💌</div>
+                <p>3. Emotional Letter</p>
+            </div>
+
+            <div class="envelope" data-letter="3">
+                <div class="flap">💌</div>
+                <p>4. Beautiful Memories</p>
+            </div>
+
+            <div class="envelope" data-letter="4">
+                <div class="flap">💌</div>
+                <p>5. Final Surprise</p>
+            </div>
+
+        </div>
+
+        <h3>Click each envelope to open! 💗</h3>
+
+        <p id="progress">0 / 5 Envelopes Opened</p>
+
+        <button id="nextBtn" hidden>Next Surprise ❤️</button>
+
+    </div>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+
+        <div class="letter-box">
+
+            <button class="close" id="closePopup">×</button>
+
+            <div id="letterContent"></div>
+
+        </div>
+
+    </div>
+    
+
+    <script src="page4.js"></script>
+
+</body>
+</html>

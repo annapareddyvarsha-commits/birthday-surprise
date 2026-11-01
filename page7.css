@@ -1,0 +1,369 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    font-family: Georgia, serif;
+
+    background: linear-gradient(
+        135deg,
+        #08051d,
+        #211044,
+        #40206d,
+        #101c38
+    );
+
+    background-size: 300% 300%;
+
+    animation: royalBackground 10s ease infinite;
+
+    overflow-x: hidden;
+}
+
+@keyframes royalBackground {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 2px solid #d9ad52;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 25px rgba(255,195,70,0.3),
+        0 0 50px rgba(150,100,255,0.2);
+
+    backdrop-filter: blur(12px);
+}
+
+h1 {
+    color: #f9d783;
+
+    font-size: 34px;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 0 15px #c89536;
+}
+
+.subtitle {
+    color: #e3d8ff;
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+.instruction {
+    color: #ffe4a0;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+/* Envelope */
+
+.envelope {
+    position: relative;
+
+    width: 320px;
+    height: 220px;
+
+    margin: 70px auto 45px;
+
+    perspective: 1000px;
+
+    filter: drop-shadow(
+        0 10px 20px rgba(80,0,80,0.35)
+    );
+}
+
+.envelope-back {
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        #d7a63e,
+        #6241a0,
+        #19264c
+    );
+
+    border: 3px solid #f5d47d;
+
+    border-radius: 10px;
+
+    z-index: 1;
+}
+
+/* Letter */
+
+.letter {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 90%;
+    height: 95%;
+
+    left: 5%;
+    bottom: 5px;
+
+    padding: 25px 18px;
+
+    overflow-y: auto;
+
+    background: linear-gradient(
+        145deg,
+        #fffdf3,
+        #f7ecd5
+    );
+
+    color: #25203b;
+
+    border: 3px solid #d5a642;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 25px rgba(255,205,90,0.5);
+
+    transition:
+        transform 1.2s ease,
+        height 1.2s ease;
+}
+
+.letter h2 {
+    color: #583b86;
+
+    font-size: 25px;
+
+    margin-bottom: 18px;
+}
+
+.letter p {
+    color: #29243a;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    line-height: 1.9;
+}
+
+.letter h3 {
+    margin-top: 20px;
+
+    color: #a27626;
+
+    font-size: 21px;
+}
+
+/* Golden Envelope Flap */
+
+.envelope-flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+
+    border-top: 130px solid #e4b74f;
+
+    transform-origin: top;
+
+    transition: transform 1s ease;
+
+    z-index: 4;
+}
+
+/* Golden Heart */
+
+.envelope-heart {
+    position: absolute;
+
+    top: 80px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    color: #ffe08b;
+
+    font-size: 45px;
+
+    text-shadow: 0 0 15px gold;
+
+    transition: opacity 0.5s;
+}
+
+/* Open Animation */
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+
+    z-index: 0;
+}
+
+.envelope.open .letter {
+    transform: translateY(-155px);
+
+    height: 340px;
+
+    z-index: 6;
+}
+
+.envelope.open .envelope-heart {
+    opacity: 0;
+}
+
+/* Buttons */
+
+button {
+    padding: 17px 32px;
+
+    border: 2px solid #f5d47d;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        90deg,
+        #d8a63d,
+        #e8c36d,
+        #a67be5
+    );
+
+    color: #211438;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 20px rgba(255,205,90,0.4);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow: 0 0 30px gold;
+}
+
+.restart-btn {
+    display: none;
+}
+
+/* Footer */
+
+.footer {
+    color: #f5d47d;
+
+    font-size: 18px;
+
+    margin-top: 35px;
+}
+
+/* Floating Hearts */
+
+.floating {
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+
+@media(max-width: 500px) {
+
+    .container {
+        padding: 30px 12px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .envelope {
+        width: 280px;
+    }
+
+    .envelope-flap {
+        border-left-width: 140px;
+        border-right-width: 140px;
+    }
+
+    .envelope.open .letter {
+        height: 340px;
+        transform: translateY(-155px);
+    }
+
+    .letter p {
+        font-size: 14px;
+    }
+
+}

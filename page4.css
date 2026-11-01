@@ -1,0 +1,260 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND */
+body {
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: linear-gradient(
+        135deg,
+        #ffe0eb,
+        #f7b6cd,
+        #e9a0bb
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+h1 {
+    color: #8b1748;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #78304c;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* ENVELOPES */
+.envelope-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.envelope {
+    position: relative;
+    min-height: 155px;
+    background: #fff0f5;
+    border: 2px solid #d85b88;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px;
+    box-shadow: 0 8px 18px #8b174833;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 25px #8b174855;
+}
+
+.flap {
+    font-size: 55px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.envelope:hover .flap {
+    transform: scale(1.15) rotate(-8deg);
+}
+
+.envelope p {
+    color: #8b1748;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.envelope.opened {
+    background: #ffd1e0;
+    border-color: #a52a5b;
+}
+
+/* PROGRESS */
+h3 {
+    color: #8b1748;
+    margin-bottom: 15px;
+}
+
+#progress {
+    color: #7b2448;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* NEXT BUTTON */
+#nextBtn {
+    background: #a51f55;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #8b174844;
+    transition: 0.3s;
+}
+
+#nextBtn:hover {
+    background: #78123b;
+    transform: scale(1.05);
+}
+
+/* POPUP BACKGROUND */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 10, 25, 0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.popup.show {
+    display: flex;
+    animation: backgroundBlast 0.5s ease;
+}
+
+/* LETTER BOX */
+.letter-box {
+    position: relative;
+    background: #fff5f8;
+    width: 100%;
+    max-width: 500px;
+    padding: 45px 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 35px #0005;
+    animation: heartBlast 0.7s cubic-bezier(.17,.89,.32,1.49);
+}
+
+/* GLOWING HEARTS */
+.letter-box::before {
+    content: "💖 ✨ 💗 ✨ 💖";
+    display: block;
+    font-size: 25px;
+    margin-bottom: 18px;
+    animation: heartGlow 1s infinite alternate;
+}
+
+.letter-box h2 {
+    color: #a51f55;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.letter-box p {
+    color: #633044;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* CLOSE BUTTON */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    color: #a51f55;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes backgroundBlast {
+    0% {
+        background: rgba(255, 70, 140, 0);
+    }
+    100% {
+        background: rgba(35, 10, 25, 0.8);
+    }
+}
+
+@keyframes heartBlast {
+    0% {
+        opacity: 0;
+        transform: scale(0.1) rotate(-20deg);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.15) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes heartGlow {
+    from {
+        transform: scale(1);
+        filter: drop-shadow(0 0 3px pink);
+    }
+    to {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 12px deeppink);
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 22px 10px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .envelope-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .envelope {
+        min-height: 135px;
+    }
+
+    .letter-box {
+        padding: 45px 20px;
+    }
+
+    .letter-box h2 {
+        font-size: 22px;
+    }
+
+    .letter-box p {
+        font-size: 16px;
+    }
+}
